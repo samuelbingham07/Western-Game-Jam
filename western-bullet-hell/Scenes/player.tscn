@@ -98,7 +98,25 @@ cache/0/20/0/underline_position = 0.0
 cache/0/20/0/underline_thickness = 0.0
 cache/0/20/0/scale = 1.0
 
+<<<<<<< HEAD
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2086693511 groups=["player"]]
+=======
+[sub_resource type="GDScript" id="GDScript_gntrk"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2086693511]
+>>>>>>> 0bc6f71435ff2ad807b5b1165aac511d96f3fd89
 z_index = 1
 motion_mode = 1
 script = ExtResource("1_rpqav")
@@ -138,9 +156,10 @@ text = "Health: "
 [node name="RestartTimer" type="Timer" parent="." unique_id=402979225]
 wait_time = 1.5
 one_shot = true
+script = SubResource("GDScript_gntrk")
 
 [node name="Gun" parent="." unique_id=669068403 instance=ExtResource("2_kyqiw")]
-position = Vector2(27, 12)
+position = Vector2(23, 15)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
