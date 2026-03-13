@@ -10,8 +10,12 @@ var screen_size
 @onready var area = $Area2D
 @onready var character = $"."
 
+<<<<<<< Updated upstream
 const ACCEL := 2.0
 
+=======
+const ACCEL := 10.0
+>>>>>>> Stashed changes
 const WRAPPING := 40
 
 signal health_zero

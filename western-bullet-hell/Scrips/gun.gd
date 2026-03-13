@@ -11,6 +11,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
+	if rotation > 270:
+		pass
 	
 	if Input.is_action_just_pressed("shoot"):
 		var bullet_instance = Bullet.instantiate()
