@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://yxyu1ql7hoid"]
+[gd_scene format=3 uid="uid://dx1ip013y2o0i"]
 
 [ext_resource type="Script" uid="uid://dcwow1rdr6uhw" path="res://Scrips/player.gd" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://bvd54osr20p68" path="res://Sprites/cowboyplaceholder.png" id="2_6t5aa"]
@@ -98,7 +98,7 @@ cache/0/20/0/underline_position = 0.0
 cache/0/20/0/underline_thickness = 0.0
 cache/0/20/0/scale = 1.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2086693511]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2086693511 groups=["player"]]
 z_index = 1
 motion_mode = 1
 script = ExtResource("1_rpqav")
