@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://dx1ip013y2o0i"]
+[gd_scene format=3 uid="uid://yxyu1ql7hoid"]
 
 [ext_resource type="Script" uid="uid://dcwow1rdr6uhw" path="res://Scrips/player.gd" id="1_rpqav"]
 [ext_resource type="Texture2D" uid="uid://bvd54osr20p68" path="res://Sprites/cowboyplaceholder.png" id="2_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://b80m7pxydxf4x" path="res://Scenes/gun.tscn" id="2_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://kgqhlyrem1m7" path="res://Scenes/gun.tscn" id="2_kyqiw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
 animations = [{
@@ -15,10 +15,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbkls"]
-size = Vector2(40, 40)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gntrk"]
+radius = 22.0
+height = 64.0
 
 [sub_resource type="FontFile" id="FontFile_rpqav"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/variation_coordinates = {}
 cache/0/face_index = 0
 cache/0/embolden = 0.0
@@ -104,13 +108,12 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_vgqql")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1232455354]
-visible = false
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=961432858]
-visible = false
-shape = SubResource("RectangleShape2D_qbkls")
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_gntrk")
 
 [node name="Coins" type="Label" parent="." unique_id=499631344]
 modulate = Color(0.82329494, 0.68200225, 0.11268934, 1)
@@ -137,7 +140,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="Gun" parent="." unique_id=669068403 instance=ExtResource("2_kyqiw")]
-position = Vector2(10, 11)
+position = Vector2(27, 12)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]

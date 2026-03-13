@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var p_health := 1
+var p_health := 10
 var speed := 300
 var screen_size
 
