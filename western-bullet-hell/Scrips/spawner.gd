@@ -41,3 +41,5 @@ func _on_timer_timeout() -> void:
 		entities += 1
 	
 	spawn.tree_exited.connect(remove_entities)
+	
+# hi hi hi

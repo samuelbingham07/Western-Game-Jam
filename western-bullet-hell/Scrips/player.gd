@@ -11,6 +11,7 @@ var screen_size
 @onready var character = $"."
 
 const ACCEL := 2.0
+
 const WRAPPING := 40
 
 signal health_zero
