@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dnil1kws3au2n"]
+
+[ext_resource type="Script" uid="uid://bcrmwp8is776v" path="res://Scrips/bullet.gd" id="1_xjght"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_xjght"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjght"]
+size = Vector2(1.4285717, 1.4285717)
+
+[node name="bullet" type="Node2D" unique_id=278018666]
+script = ExtResource("1_xjght")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=862453857]
+modulate = Color(0.22352941, 0.21960784, 1, 1)
+scale = Vector2(30, 30)
+mesh = SubResource("QuadMesh_xjght")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=357312359]
+scale = Vector2(21, 21)
+collision_layer = 256
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=984177738]
+position = Vector2(-9.082613e-08, -1.1353266e-07)
+shape = SubResource("RectangleShape2D_xjght")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

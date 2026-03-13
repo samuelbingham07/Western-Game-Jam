@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b80m7pxydxf4x"]
+
+[ext_resource type="Script" uid="uid://b75ruk6dsbm5o" path="res://Scrips/gun.gd" id="1_nxj5y"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3dt2y"]
+
+[node name="Gun" type="Node2D" unique_id=669068403]
+script = ExtResource("1_nxj5y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1651871250]
+modulate = Color(0.38842314, 0.27356616, 0.03521265, 1)
+position = Vector2(22, -6)
+scale = Vector2(45, 12.5)
+mesh = SubResource("QuadMesh_3dt2y")
