@@ -39,6 +39,7 @@ func _on_timer_timeout() -> void:
 		add_child(spawn)
 		timer.wait_time = randi_range(1, 2)
 		entities += 1
-		
+	
 	spawn.tree_exited.connect(remove_entities)
 	
+# hi hi hi
