@@ -11,6 +11,7 @@ var screen_size
 @onready var character = $"."
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gun: Node2D = $Gun
+@onready var modulator: Timer = $Modulator
 
 
 
@@ -50,7 +51,6 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("walk_up")
 		gun.visible = false
 	
-	print(playerInput)
 	
 	wrapping()
 	coin_label()
@@ -83,6 +83,7 @@ func health_label():
 func damage_dealt(amount):
 	p_health -= amount
 	animated_sprite_2d.modulate = Color.RED
+	modulator.start()
 	if p_health <= 0:
 		health_zero.emit()
 	
@@ -99,3 +100,6 @@ func _on_health_zero():
 func _on_restart_timer_timeout() -> void:
 	Global.coins = 0
 	get_tree().reload_current_scene()
+
+func _on_modulator_timeout() -> void:
+	animated_sprite_2d.modulate = Color(1, 1, 1, 1)
