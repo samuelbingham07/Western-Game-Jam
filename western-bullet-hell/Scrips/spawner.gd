@@ -10,7 +10,7 @@ var spawnable_entities := [
 var boss_scene = preload("res://Scenes/boss.tscn")
 
 @export var max_entities := 6
-@export var boss_timer := 120.0
+@export var boss_timer := 20
 @onready var timer = $Timer
 
 var elapsed_time := 0.0
