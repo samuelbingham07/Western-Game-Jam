@@ -32,4 +32,10 @@ grow_vertical = 2
 texture = ExtResource("3_6j5ir")
 
 [node name="Barrel" parent="." unique_id=614037990 instance=ExtResource("4_6j5ir")]
-position = Vector2(745, 312)
+position = Vector2(553, 136)
+
+[node name="Barrel2" parent="." unique_id=1220351273 instance=ExtResource("4_6j5ir")]
+position = Vector2(186, 427)
+
+[node name="Barrel3" parent="." unique_id=210888404 instance=ExtResource("4_6j5ir")]
+position = Vector2(1031, 451)
