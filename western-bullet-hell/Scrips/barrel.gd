@@ -22,7 +22,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	animated_sprite_2d.play("opening")
 	area_2d.queue_free()
 	deletion.start()
-	Global.player_speed = 100
+	max_bullet_down()
 
 func _on_deletion_timeout() -> void:
 	queue_free()
+
+func speed_down():
+	Global.player_speed = 100
+
+func max_bullet_down():
+	Global.max_bullets = 2
