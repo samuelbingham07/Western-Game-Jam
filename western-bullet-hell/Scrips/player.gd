@@ -28,11 +28,14 @@ func _process(delta: float) -> void:
 	
 	#Carries the value of the Input Vector
 	var playerInput = player_movement()
+	
 	#Allows the player to move smoothly by lerping the starting
 	#point (velocity) to where the player is moving to (PI) by
 	# a factor of ACCEL * delta
 	velocity = lerp(velocity, playerInput * Global.player_speed, ACCEL * delta)
 	move_and_slide()
+	
+	
 	
 	if playerInput == Vector2(1.0, 0.0):
 		animated_sprite_2d.play("walk_right")
@@ -52,6 +55,7 @@ func _process(delta: float) -> void:
 	
 	
 	#wrapping()
+	clamp_to_borders()
 	coin_label()
 	health_label()
 
@@ -60,6 +64,11 @@ func player_movement():
 	var direction = Input.get_vector("left", "right", "up", "down")
 	#Returns the value of ^ to be used in other functions
 	return direction
+	
+func clamp_to_borders():
+	position.x = clamp(position.x, 50, screen_size.x - 50)
+	position.y = clamp(position.y, 100, screen_size.y - 125)
+
 	
 #func wrapping():
 	#if position.x > screen_size.x + WRAPPING:
