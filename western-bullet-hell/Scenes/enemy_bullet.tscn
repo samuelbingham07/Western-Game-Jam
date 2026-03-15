@@ -1,23 +1,24 @@
-[gd_scene format=3 uid="uid://dnil1kws3au2n"]
+[gd_scene format=3 uid="uid://slsp4v33s4b7"]
 
-[ext_resource type="Script" uid="uid://bcrmwp8is776v" path="res://Scrips/bullet.gd" id="1_xjght"]
-[ext_resource type="Texture2D" uid="uid://dcg3kwv8u0u06" path="res://Sprites/Bullet.png" id="2_oduel"]
+[ext_resource type="Script" uid="uid://bcrmwp8is776v" path="res://Scrips/bullet.gd" id="1_54jiv"]
+[ext_resource type="Texture2D" uid="uid://dcg3kwv8u0u06" path="res://Sprites/Bullet.png" id="2_b6yqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycag2"]
 size = Vector2(0.61904764, 0.2857143)
 
-[node name="bullet" type="Node2D" unique_id=278018666]
-script = ExtResource("1_xjght")
+[node name="enemy_bullet" type="Node2D" unique_id=278018666]
+script = ExtResource("1_54jiv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=693242499]
+modulate = Color(1, 0.011764706, 0.101960786, 1)
 position = Vector2(2.3841858e-07, -2.3841858e-07)
 scale = Vector2(0.984375, 0.984375)
-texture = ExtResource("2_oduel")
+texture = ExtResource("2_b6yqb")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=357312359]
 scale = Vector2(21, 21)
-collision_layer = 256
-collision_mask = 4
+collision_layer = 512
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=984177738]
 position = Vector2(0.023809507, 2.8383165e-09)

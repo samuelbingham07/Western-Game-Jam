@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var player: Node2D = null
 var shoot_timer := 0.0
-var bullet_scene = preload("res://Scenes/bullet.tscn")
+var bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 var is_ranged := false
 
 var sprite_left = preload("res://Sprites/cactusRight.png") 
