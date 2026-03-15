@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkk4hd3rr2scb"]
 
-[ext_resource type="Script" path="res://Scrips/boss.gd" id="1_wwfse"]
+[ext_resource type="Script" uid="uid://bqryswh8cl5xo" path="res://Scrips/boss.gd" id="1_wwfse"]
 [ext_resource type="Texture2D" uid="uid://dnx3ikfnhdhut" path="res://Sprites/boss.png" id="2_cxrok"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwfse"]
