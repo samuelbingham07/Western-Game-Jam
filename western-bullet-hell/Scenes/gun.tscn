@@ -93,6 +93,7 @@ scale = Vector2(45, 12.5)
 mesh = SubResource("QuadMesh_3dt2y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=376828884]
-scale = Vector2(1.234375, 1.234375)
+position = Vector2(11, -8)
+scale = Vector2(1.1835938, 1.1835938)
 sprite_frames = SubResource("SpriteFrames_ftlo2")
-animation = &"gun_jamming"
+animation = &"shoot"
