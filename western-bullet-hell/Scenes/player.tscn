@@ -92,7 +92,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8erm5")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_down",
 "speed": 5.0
 }, {
@@ -109,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pu2lt")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_left",
 "speed": 5.0
 }, {
@@ -126,7 +126,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fd4e3")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_right",
 "speed": 5.0
 }, {
@@ -143,7 +143,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l6n3p")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_up",
 "speed": 5.0
 }]
@@ -239,7 +239,7 @@ script = ExtResource("1_rpqav")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1727612834]
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_vgqql")
-animation = &"walk_down"
+animation = &"walk_right"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1232455354]
 collision_layer = 2

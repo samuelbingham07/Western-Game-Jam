@@ -9,6 +9,8 @@ var screen_size
 @onready var restart = $RestartTimer
 @onready var area = $Area2D
 @onready var character = $"."
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var gun: Node2D = $Gun
 
 
 
@@ -20,6 +22,7 @@ signal health_zero
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	health_zero.connect(_on_health_zero)
+	animated_sprite_2d.play("walk_down")
 
 func _process(delta: float) -> void:
 	
@@ -30,6 +33,24 @@ func _process(delta: float) -> void:
 	# a factor of ACCEL * delta
 	velocity = lerp(velocity, playerInput * speed, ACCEL * delta)
 	move_and_slide()
+	
+	if playerInput == Vector2(1.0, 0.0):
+		animated_sprite_2d.play("walk_right")
+		gun.global_position.x = global_position.x + 10
+		gun.visible = true
+	if playerInput == Vector2(-1.0, 0.0):
+		animated_sprite_2d.play("walk_left")
+		gun.global_position.x = global_position.x - 10
+		gun.visible = true
+	if playerInput == Vector2(0.0, 1.0):
+		animated_sprite_2d.play("walk_down")
+		gun.global_position.x = global_position.x + 15
+		gun.visible = true
+	if playerInput == Vector2(0.0, -1.0):
+		animated_sprite_2d.play("walk_up")
+		gun.visible = false
+	
+	print(playerInput)
 	
 	wrapping()
 	coin_label()
