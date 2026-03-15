@@ -82,6 +82,7 @@ func health_label():
 
 func damage_dealt(amount):
 	p_health -= amount
+	animated_sprite_2d.modulate = Color.RED
 	if p_health <= 0:
 		health_zero.emit()
 	

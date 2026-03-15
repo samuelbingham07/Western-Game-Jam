@@ -4,24 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://dy1811vmj7cyg" path="res://Sprites/tumbleweed.png" id="2_1f0kj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
-radius = 32.20761
+radius = 2.8000004
 
 [node name="Enemy" type="CharacterBody2D" unique_id=331743944]
 script = ExtResource("1_hghv2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2134973101]
-modulate = Color(0.4232155, 0, 0, 1)
-scale = Vector2(30, 30)
+position = Vector2(-1.1368684e-13, 1.1368684e-13)
+scale = Vector2(2.8242188, 2.8242188)
 texture = ExtResource("2_1f0kj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D" unique_id=1272815212]
-position = Vector2(0.03333333, 0.43333337)
-scale = Vector2(0.33333328, 0.33333328)
-shape = SubResource("CircleShape2D_1f0kj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=585487680]
 scale = Vector2(10, 10)
 collision_layer = 4
 collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1272815212]
+position = Vector2(2.646978e-23, 0.099999994)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("CircleShape2D_1f0kj")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
