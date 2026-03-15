@@ -17,7 +17,7 @@ mesh = SubResource("QuadMesh_sgwqp")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1899414657]
 scale = Vector2(10, 10)
-collision_mask = 2
+collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=20034279]
 position = Vector2(-1.6987323e-07, 1.2516975e-07)

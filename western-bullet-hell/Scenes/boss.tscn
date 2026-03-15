@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkk4hd3rr2scb"]
 
-[ext_resource type="Script" path="res://Scrips/boss.gd" id="1_wwfse"]
+[ext_resource type="Script" uid="uid://bqryswh8cl5xo" path="res://Scrips/boss.gd" id="1_wwfse"]
 [ext_resource type="Texture2D" uid="uid://dnx3ikfnhdhut" path="res://Sprites/boss.png" id="2_cxrok"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwfse"]
@@ -15,6 +15,7 @@ scale = Vector2(2.4218752, 2.4218752)
 texture = ExtResource("2_cxrok")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=501678095]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=719671193]
 position = Vector2(0, 0.5)
