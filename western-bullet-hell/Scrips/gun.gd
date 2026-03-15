@@ -2,8 +2,12 @@ extends Node2D
 
 var gun_jammed = false
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+var available_bullets = 0
+>>>>>>> parent of f92461a (change layers)
 =======
 var available_bullets = 0
 >>>>>>> parent of f92461a (change layers)
