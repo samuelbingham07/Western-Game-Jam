@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed := 100.0
-@export var stop_distance := 100.0
+@export var stop_distance := 300
 @export var shoot_cooldown := 1.5
 
 var player: Node2D = null

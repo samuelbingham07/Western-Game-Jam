@@ -1,18 +1,19 @@
 extends CharacterBody2D
 
 @export var speed := 60.0
-@export var stop_distance := 200.0
+@export var stop_distance := 600.0
 @export var shoot_cooldown := 1.0
 @export var max_health := 10
 
 var player: Node2D = null
 var shoot_timer := 0.0
 var health := 10
-var bullet_scene = preload("res://Scenes/bullet.tscn")
+var bullet_scene = preload("res://Scenes/enemy_bullet.tscn")
 
 func _ready() -> void:
 	await get_tree().process_frame
 	player = get_tree().root.find_child("CharacterBody2D", true, false)
+	print("boss player = ", player)
 
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -44,9 +45,10 @@ func shoot() -> void:
 
 func take_damage(amount: int) -> void:
 	health -= amount
-	print("boss health: ", health)
+	print("boss hit, health remaining: ", health)
 	if health <= 0:
 		queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("boss area entered by: ", area.get_parent())
 	take_damage(1)

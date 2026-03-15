@@ -12,4 +12,8 @@ func _process(delta: float) -> void:
 	position += transform.x * SPEED * speed_multiplier * delta
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("bullet hit: ", area.get_parent(), " has take_damage: ", area.get_parent().has_method("take_damage"))
+	var parent = area.get_parent()
+	if parent.has_method("take_damage"):
+		parent.take_damage(1)
 	queue_free()
