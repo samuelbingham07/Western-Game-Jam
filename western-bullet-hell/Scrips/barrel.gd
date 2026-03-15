@@ -4,7 +4,10 @@ extends Node2D
 @onready var area_2d: Area2D = $Area2D
 @onready var deletion: Timer = $Deletion
 
-var bad_things: Array[Callable] = [ speed_down, max_bullet_down]
+var bad_things: Array[Callable] = [ speed_down, 
+max_bullet_down,
+speed_up,
+]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +25,9 @@ func speed_down():
 
 func max_bullet_down():
 	Global.max_bullets = 2
+	
+func speed_up():
+	Global.player_speed = 600
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	animated_sprite_2d.play("opening")
