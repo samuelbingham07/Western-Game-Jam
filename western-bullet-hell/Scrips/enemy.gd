@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
 @export var speed := 100.0
-@export var stop_distance := 300.0
+@export var stop_distance := 100.0
 @export var shoot_cooldown := 1.5
 
 var player: Node2D = null
 var shoot_timer := 0.0
 var bullet_scene = preload("res://Scenes/bullet.tscn")
 var is_ranged := false
+
+var sprite_left = preload("res://Sprites/cactusRight.png") 
+var sprite_right = preload("res://Sprites/cactusLeft.png") 
 
 func _ready() -> void:
 	await get_tree().process_frame
@@ -17,6 +20,16 @@ func _ready() -> void:
 		is_ranged = false
 	else:
 		is_ranged = true
+
+	if is_ranged:
+		var sprite = get_node_or_null("AnimatedSprite2D")
+		if sprite == null:
+			sprite = get_node_or_null("Sprite2D")
+		if sprite:
+			if global_position.x < 0:
+				sprite.texture = sprite_left
+			else:
+				sprite.texture = sprite_right
 
 func _physics_process(delta: float) -> void:
 	if player == null:
