@@ -231,7 +231,7 @@ cache/0/20/0/underline_position = 0.0
 cache/0/20/0/underline_thickness = 0.0
 cache/0/20/0/scale = 1.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2086693511]
+[node name="Player" type="CharacterBody2D" unique_id=2086693511]
 z_index = 1
 motion_mode = 1
 script = ExtResource("1_rpqav")

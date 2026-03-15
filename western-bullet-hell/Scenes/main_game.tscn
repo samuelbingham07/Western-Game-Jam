@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://yxyu1ql7hoid" path="res://Scenes/player.tscn" id="1_l756w"]
 [ext_resource type="PackedScene" uid="uid://obcqjfuugtyv" path="res://Scenes/spawner.tscn" id="3_0e3vx"]
 [ext_resource type="Texture2D" uid="uid://dmxvm18j8qjom" path="res://Saloon.png" id="3_6j5ir"]
+[ext_resource type="PackedScene" uid="uid://bhg1wovj77gmr" path="res://Scenes/barrel.tscn" id="4_6j5ir"]
 
 [node name="Node2D" type="Node" unique_id=1190247988]
 
-[node name="CharacterBody2D" parent="." unique_id=2086693511 instance=ExtResource("1_l756w")]
+[node name="Player" parent="." unique_id=2086693511 instance=ExtResource("1_l756w")]
 position = Vector2(390, 294)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2133743916]
@@ -29,3 +30,6 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_6j5ir")
+
+[node name="Barrel" parent="." unique_id=614037990 instance=ExtResource("4_6j5ir")]
+position = Vector2(745, 312)

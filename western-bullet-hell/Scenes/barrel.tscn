@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bhg1wovj77gmr"]
+
+[ext_resource type="Texture2D" uid="uid://uesldyu0m5o8" path="res://Sprites/Barrel.png" id="1_3w4xy"]
+[ext_resource type="Script" uid="uid://b3otkm3tuype5" path="res://Scrips/barrel.gd" id="1_m5w3l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5w3l"]
+atlas = ExtResource("1_3w4xy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp70x"]
+atlas = ExtResource("1_3w4xy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tdys"]
+atlas = ExtResource("1_3w4xy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ax0"]
+atlas = ExtResource("1_3w4xy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4cgw"]
+atlas = ExtResource("1_3w4xy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cukp"]
+atlas = ExtResource("1_3w4xy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qpb77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5w3l")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rp70x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tdys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ax0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4cgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cukp")
+}],
+"loop": false,
+"name": &"opening",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwc37"]
+radius = 26.0
+height = 56.0
+
+[node name="Barrel" type="Node2D" unique_id=614037990]
+script = ExtResource("1_m5w3l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1789468239]
+position = Vector2(0, -1)
+scale = Vector2(2.1484375, 2.1484375)
+sprite_frames = SubResource("SpriteFrames_qpb77")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1419542520]
+collision_layer = 32
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=964929956]
+shape = SubResource("CapsuleShape2D_mwc37")
+
+[node name="Deletion" type="Timer" parent="." unique_id=751666971]
+wait_time = 2.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Deletion" to="." method="_on_deletion_timeout"]

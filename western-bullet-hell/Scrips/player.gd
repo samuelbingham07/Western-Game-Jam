@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var p_health := 10
-var speed := 300
 var screen_size
 
 @onready var c_label = $Coins
@@ -32,7 +31,7 @@ func _process(delta: float) -> void:
 	#Allows the player to move smoothly by lerping the starting
 	#point (velocity) to where the player is moving to (PI) by
 	# a factor of ACCEL * delta
-	velocity = lerp(velocity, playerInput * speed, ACCEL * delta)
+	velocity = lerp(velocity, playerInput * Global.player_speed, ACCEL * delta)
 	move_and_slide()
 	
 	if playerInput == Vector2(1.0, 0.0):
@@ -52,7 +51,7 @@ func _process(delta: float) -> void:
 		gun.visible = false
 	
 	
-	wrapping()
+	#wrapping()
 	coin_label()
 	health_label()
 
@@ -62,16 +61,16 @@ func player_movement():
 	#Returns the value of ^ to be used in other functions
 	return direction
 	
-func wrapping():
-	if position.x > screen_size.x + WRAPPING:
-		position.x = -WRAPPING
-	elif position.x < screen_size.x - screen_size.x - WRAPPING:
-		position.x = screen_size.x + WRAPPING
-	
-	if position.y > screen_size.y + WRAPPING:
-		position.y = -WRAPPING
-	elif position.y < screen_size.y - screen_size.y - WRAPPING:
-		position.y = screen_size.y + WRAPPING
+#func wrapping():
+	#if position.x > screen_size.x + WRAPPING:
+		#position.x = -WRAPPING
+	#elif position.x < screen_size.x - screen_size.x - WRAPPING:
+		#position.x = screen_size.x + WRAPPING
+	#
+	#if position.y > screen_size.y + WRAPPING:
+		#position.y = -WRAPPING
+	#elif position.y < screen_size.y - screen_size.y - WRAPPING:
+		#position.y = screen_size.y + WRAPPING
 	
 func coin_label():
 	c_label.text = "Coins: " + str(Global.coins)
