@@ -1,7 +1,7 @@
 extends Node2D
 
 var gun_jammed = false
-var available_bullets = 0
+
 
 @export var max_bullets = 6
 @onready var Bullet = preload("res://Scenes/bullet.tscn")
@@ -10,7 +10,7 @@ var available_bullets = 0
 @onready var gun_jams: AudioStreamPlayer2D = $GunJams
 
 func _ready() -> void:
-	available_bullets = max_bullets
+	Global.available_bullets = max_bullets
 
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
@@ -20,11 +20,11 @@ func _process(delta: float) -> void:
 	else:
 		scale.y = 1
 
-	if Input.is_action_just_pressed("shoot") and available_bullets < 1:
+	if Input.is_action_just_pressed("shoot") and Global.available_bullets < 1:
 		animated_sprite_2d.play("gun_jamming")
 		gun_jams.play()
 
-	if Input.is_action_just_pressed("shoot") and available_bullets > 0:
+	if Input.is_action_just_pressed("shoot") and Global.available_bullets > 0:
 		var bullet_instance = Bullet.instantiate()
 		bullet_instance.from_player = true  
 		get_tree().root.add_child(bullet_instance)
@@ -35,10 +35,10 @@ func _process(delta: float) -> void:
 		bullet_instance.rotation = rotation
 		animated_sprite_2d.play("shoot")
 		gun_shoots.play()
-		available_bullets -= 1
+		Global.available_bullets -= 1
 
 	reload()
 
 func reload():
 	if Input.is_action_just_pressed("reload"):
-		available_bullets = max_bullets
+		Global.available_bullets = max_bullets
