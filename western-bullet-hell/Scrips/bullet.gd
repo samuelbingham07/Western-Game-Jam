@@ -2,10 +2,8 @@ extends Node2D
 
 const SPEED := 300
 var speed_multiplier := 1.0
-<<<<<<< HEAD
-=======
+
 var from_player := false
->>>>>>> 47b19ce5be377697124563a2aeec75de227bb619
 
 func _ready() -> void:
 	if from_player:
@@ -23,8 +21,6 @@ func _process(delta: float) -> void:
 	position += transform.x * SPEED * speed_multiplier * delta
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-<<<<<<< HEAD
-=======
 	var parent = area.get_parent()
 	if parent.has_method("take_damage"):
 		parent.take_damage(1)
@@ -33,5 +29,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	queue_free()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
->>>>>>> 47b19ce5be377697124563a2aeec75de227bb619
+
 	queue_free()

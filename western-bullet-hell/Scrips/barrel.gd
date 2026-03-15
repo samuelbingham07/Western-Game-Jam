@@ -28,5 +28,6 @@ func _on_deletion_timeout() -> void:
 	queue_free()
 
 
-func speed_drop():
+func speed_drop_bullet_up():
 	Global.player_speed = 100
+	
