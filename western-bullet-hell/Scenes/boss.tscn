@@ -12,6 +12,15 @@ script = ExtResource("1_wwfse")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1158557589]
 texture = ExtResource("2_cxrok")
 
+<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=719671193]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_wwfse")
+=======
+[node name="Area2D" type="Area2D" parent="." unique_id=501678095]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=719671193]
+position = Vector2(0, 0.5)
+shape = SubResource("CapsuleShape2D_wwfse")
+>>>>>>> 47b19ce5be377697124563a2aeec75de227bb619

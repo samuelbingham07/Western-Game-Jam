@@ -34,6 +34,11 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("shoot") and Global.available_bullets > 0:
 		var bullet_instance = Bullet.instantiate()
+<<<<<<< HEAD
+=======
+		bullet_instance.from_player = true  
+		get_tree().root.add_child(bullet_instance)
+>>>>>>> 47b19ce5be377697124563a2aeec75de227bb619
 		bullet_instance.speed_multiplier = 1.0 
 		get_tree().root.add_child(bullet_instance)
 		bullet_instance.global_position.x = global_position.x + 10
