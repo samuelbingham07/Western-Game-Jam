@@ -25,5 +25,7 @@ size = Vector2(20, 30)
 sprite_frames = SubResource("SpriteFrames_kowwf")
 script = ExtResource("1_cu84d")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=374052842]
+[node name="Area2D" type="Area2D" parent="." unique_id=1447704958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=374052842]
 shape = SubResource("RectangleShape2D_5j68v")

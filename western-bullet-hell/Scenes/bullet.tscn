@@ -16,7 +16,7 @@ texture = ExtResource("2_oduel")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=357312359]
 scale = Vector2(21, 21)
-collision_layer = 256
+collision_layer = 258
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=984177738]
