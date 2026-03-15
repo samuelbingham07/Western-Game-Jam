@@ -6,6 +6,8 @@ var available_bullets = 0
 
 @onready var Bullet = preload("res://Scenes/bullet.tscn")
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var gun_shoots: AudioStreamPlayer2D = $GunShoots
+@onready var gun_jams: AudioStreamPlayer2D = $GunJams
 
 func _ready() -> void:
 	available_bullets = max_bullets
@@ -23,6 +25,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shoot") and available_bullets < 1:
 		animated_sprite_2d.play("gun_jamming")
+		gun_jams.play()
 	
 	if Input.is_action_just_pressed("shoot") and available_bullets > 0:
 		var bullet_instance = Bullet.instantiate()
@@ -31,6 +34,7 @@ func _process(delta: float) -> void:
 		bullet_instance.global_position.y = global_position.y - 10
 		bullet_instance.rotation = rotation
 		animated_sprite_2d.play("shoot")
+		gun_shoots.play()
 		available_bullets -= 1
 	reload()
 
