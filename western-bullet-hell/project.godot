@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 Global="*uid://dh518cuahl70m"
 
-[global_group]
-
-ranged=""
-
 [input]
 
 left={
