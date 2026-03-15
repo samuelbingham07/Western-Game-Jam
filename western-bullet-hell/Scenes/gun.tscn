@@ -2,8 +2,25 @@
 
 [ext_resource type="Script" uid="uid://b75ruk6dsbm5o" path="res://Scrips/gun.gd" id="1_nxj5y"]
 [ext_resource type="Texture2D" uid="uid://curo5ns6ivciq" path="res://Sprites/GunNormal.png" id="2_oqrbh"]
+[ext_resource type="Texture2D" uid="uid://c70sptkfca14f" path="res://Sprites/GunJammed.png" id="2_t6ynv"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3dt2y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftlo2"]
+atlas = ExtResource("2_t6ynv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlq0n"]
+atlas = ExtResource("2_t6ynv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae81u"]
+atlas = ExtResource("2_t6ynv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2uwv"]
+atlas = ExtResource("2_t6ynv")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t6ynv"]
 atlas = ExtResource("2_oqrbh")
@@ -27,6 +44,23 @@ region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ftlo2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftlo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlq0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae81u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2uwv")
+}],
+"loop": false,
+"name": &"gun_jamming",
+"speed": 16.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t6ynv")
@@ -59,8 +93,6 @@ scale = Vector2(45, 12.5)
 mesh = SubResource("QuadMesh_3dt2y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=376828884]
-scale = Vector2(1.59375, 1.59375)
+scale = Vector2(1.234375, 1.234375)
 sprite_frames = SubResource("SpriteFrames_ftlo2")
-animation = &"shoot"
-frame = 4
-frame_progress = 1.0
+animation = &"gun_jamming"
