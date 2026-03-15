@@ -21,21 +21,17 @@ func remove_entities():
 		entities -= 1
 
 func _on_timer_timeout() -> void:
-	var nwidth = randi_range(1, width)
-	var nheight = randi_range(1, height)
 	var spawned = spawnable_entities.pick_random()
 	var spawn = spawned.instantiate()
 
 	if entities < max_entities:
-		spawn.global_position = Vector2(nwidth, nheight)
+		if randi_range(0, 1) == 0:
+			spawn.global_position = Vector2(-50, randi_range(130, 518))  # left
+		else:
+			spawn.global_position = Vector2(width + 50, randi_range(130, 518))  # right
+
 		add_child(spawn)
 		timer.wait_time = randi_range(1, 2)
 		entities += 1
 
-		# Pass the player reference to enemies after adding to scene
-		if spawn.has_method("set_player"):
-			var player = get_tree().get_first_node_in_group("player")
-			spawn.set_player(player)
-
 	spawn.tree_exited.connect(remove_entities)
-	
