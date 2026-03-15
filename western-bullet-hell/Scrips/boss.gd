@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed := 60.0
-@export var stop_distance := 600.0
+@export var stop_distance := 200.0
 @export var shoot_cooldown := 1.0
 @export var max_health := 10
 

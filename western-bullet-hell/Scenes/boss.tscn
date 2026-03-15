@@ -3,19 +3,15 @@
 [ext_resource type="Script" uid="uid://bqryswh8cl5xo" path="res://Scrips/boss.gd" id="1_wwfse"]
 [ext_resource type="Texture2D" uid="uid://dnx3ikfnhdhut" path="res://Sprites/boss.png" id="2_cxrok"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwfse"]
-radius = 21.0
-height = 75.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwfse"]
+size = Vector2(18, 28)
 
 [node name="Boss" type="CharacterBody2D" unique_id=1019106935]
 script = ExtResource("1_wwfse")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1158557589]
-scale = Vector2(2.4218752, 2.4218752)
 texture = ExtResource("2_cxrok")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=501678095]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=719671193]
-position = Vector2(0, 0.5)
-shape = SubResource("CapsuleShape2D_wwfse")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=719671193]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_wwfse")
