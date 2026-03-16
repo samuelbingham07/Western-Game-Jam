@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bvd54osr20p68" path="res://Sprites/cowboyplaceholder.png" id="2_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://kgqhlyrem1m7" path="res://Scenes/gun.tscn" id="2_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://cepeas2hb5hlh" path="res://Sprites/cowboywalking.aesprite.png" id="3_vgqql"]
+[ext_resource type="FontFile" uid="uid://co82p06r7xqmn" path="res://Sounds/PixelifySans-VariableFont_wght.ttf" id="4_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("3_vgqql")
@@ -152,85 +153,6 @@ animations = [{
 radius = 22.0
 height = 64.0
 
-[sub_resource type="FontFile" id="FontFile_rpqav"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/15/0/ascent = 0.0
-cache/0/15/0/descent = 0.0
-cache/0/15/0/underline_position = 0.0
-cache/0/15/0/underline_thickness = 0.0
-cache/0/15/0/scale = 1.0
-cache/0/14/0/ascent = 0.0
-cache/0/14/0/descent = 0.0
-cache/0/14/0/underline_position = 0.0
-cache/0/14/0/underline_thickness = 0.0
-cache/0/14/0/scale = 1.0
-cache/0/13/0/ascent = 0.0
-cache/0/13/0/descent = 0.0
-cache/0/13/0/underline_position = 0.0
-cache/0/13/0/underline_thickness = 0.0
-cache/0/13/0/scale = 1.0
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/11/0/ascent = 0.0
-cache/0/11/0/descent = 0.0
-cache/0/11/0/underline_position = 0.0
-cache/0/11/0/underline_thickness = 0.0
-cache/0/11/0/scale = 1.0
-cache/0/10/0/ascent = 0.0
-cache/0/10/0/descent = 0.0
-cache/0/10/0/underline_position = 0.0
-cache/0/10/0/underline_thickness = 0.0
-cache/0/10/0/scale = 1.0
-cache/0/9/0/ascent = 0.0
-cache/0/9/0/descent = 0.0
-cache/0/9/0/underline_position = 0.0
-cache/0/9/0/underline_thickness = 0.0
-cache/0/9/0/scale = 1.0
-cache/0/8/0/ascent = 0.0
-cache/0/8/0/descent = 0.0
-cache/0/8/0/underline_position = 0.0
-cache/0/8/0/underline_thickness = 0.0
-cache/0/8/0/scale = 1.0
-cache/0/17/0/ascent = 0.0
-cache/0/17/0/descent = 0.0
-cache/0/17/0/underline_position = 0.0
-cache/0/17/0/underline_thickness = 0.0
-cache/0/17/0/scale = 1.0
-cache/0/18/0/ascent = 0.0
-cache/0/18/0/descent = 0.0
-cache/0/18/0/underline_position = 0.0
-cache/0/18/0/underline_thickness = 0.0
-cache/0/18/0/scale = 1.0
-cache/0/19/0/ascent = 0.0
-cache/0/19/0/descent = 0.0
-cache/0/19/0/underline_position = 0.0
-cache/0/19/0/underline_thickness = 0.0
-cache/0/19/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-
 [node name="Player" type="CharacterBody2D" unique_id=2086693511]
 z_index = 1
 motion_mode = 1
@@ -255,9 +177,10 @@ offset_left = -56.0
 offset_top = -55.0
 offset_right = 3.0
 offset_bottom = -27.0
-theme_override_fonts/font = SubResource("FontFile_rpqav")
+theme_override_fonts/font = ExtResource("4_fkybt")
 theme_override_font_sizes/font_size = 20
 text = "Coins: "
+horizontal_alignment = 1
 
 [node name="Health" type="Label" parent="." unique_id=71142888]
 modulate = Color(0.82329494, 0.68200225, 0.11268934, 1)
@@ -265,7 +188,7 @@ offset_left = -57.0
 offset_top = -76.0
 offset_right = 2.0
 offset_bottom = -48.0
-theme_override_fonts/font = SubResource("FontFile_rpqav")
+theme_override_fonts/font = ExtResource("4_fkybt")
 theme_override_font_sizes/font_size = 20
 text = "Health: "
 
