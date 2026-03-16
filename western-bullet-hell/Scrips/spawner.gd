@@ -63,9 +63,9 @@ func _on_timer_timeout() -> void:
 			)
 		else:  # enemy
 			if randi_range(0, 1) == 0:
-				spawn.global_position = Vector2(-50, randi_range(130, 518))
+				spawn.global_position = Vector2(-50, randi_range(150, 500))
 			else:
-				spawn.global_position = Vector2(width + 50, randi_range(130, 518))
+				spawn.global_position = Vector2(width + 50, randi_range(150, 500))
 
 		add_child(spawn)
 		entities += 1

@@ -51,9 +51,9 @@ func take_damage(amount: int) -> void:
 	sprite_2d.modulate = Color.RED
 	color_change.start()
 	if health <= 0:
-		print("boss died")  # ✅ Add this
+		print("boss died")  
 		var player = get_tree().get_first_node_in_group("player")
-		print("player found: ", player)  # ✅ And this
+		print("player found: ", player)  
 		if player:
 			player.show_win_screen()
 		queue_free()
