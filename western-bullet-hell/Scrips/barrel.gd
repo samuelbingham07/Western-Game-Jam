@@ -3,7 +3,6 @@ extends Node2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var area_2d: Area2D = $Area2D
 @onready var deletion: Timer = $Deletion
-@onready var rich_text_label: RichTextLabel = $RichTextLabel
 
 
 var bad_things: Array[Callable] = [ speed_down, 
@@ -44,14 +43,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	deletion.start()
 	var baddy = bad_things.pick_random()
 	baddy.call()
-	if baddy == speed_down:
-		rich_text_label.text = "You are now slow!"
-	if baddy == speed_up:
-		rich_text_label.text = "You are fast!"
-	if baddy == do_damage:
-		rich_text_label.text = "Your health has changed!"
-	if baddy == max_bullet_down:
-		rich_text_label.text = "You have only two bullets!"
+	#if baddy == speed_down:
+		#effects.rich_text_label.text = "You are now slow!"
+	#if baddy == speed_up:
+		#effects.rich_text_label.text = "You are fast!"
+	#if baddy == do_damage:
+		#effects.rich_text_label.text = "Your health has changed!"
+	#if baddy == max_bullet_down:
+		#effects.rich_text_label.text = "You have only two bullets!"
 
 func _on_deletion_timeout() -> void:
 	queue_free()

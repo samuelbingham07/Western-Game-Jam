@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://drgtp5qkh8dxw"]
+
+[ext_resource type="Script" uid="uid://uo56fjq3dtn5" path="res://Scrips/effects.gd" id="1_i7d06"]
+
+[sub_resource type="Theme" id="Theme_vdbwp"]
+RichTextLabel/colors/default_color = Color(0.9946688, 0.9919227, 0.9890079, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+RichTextLabel/constants/outline_size = 2
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 23
+
+[node name="Node2D" type="Node2D" unique_id=908383533]
+script = ExtResource("1_i7d06")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=943486072]
+offset_left = 72.0
+offset_top = 51.0
+offset_right = 617.125
+offset_bottom = 100.0
+theme = SubResource("Theme_vdbwp")
+text = "No Effects"

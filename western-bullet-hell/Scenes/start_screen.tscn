@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dgg8vq7dnfek8"]
+[gd_scene format=3 uid="uid://dvhtobr4rl8om"]
 
-[ext_resource type="Script" uid="uid://n0cq4x1yibg5" path="res://Scrips/startscreen.gd" id="1_ainjc"]
+[ext_resource type="Script" path="res://Scrips/startscreen.gd" id="1_ainjc"]
 [ext_resource type="Texture2D" uid="uid://cj1x2lai38f3n" path="res://Sprites/startpage1.png" id="2_60ddj"]
 [ext_resource type="AudioStream" uid="uid://3ll0sk2h3a6y" path="res://Sounds/music_for_videos-western-duel-165284.mp3" id="3_60ddj"]
 
