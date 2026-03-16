@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dgg8vq7dnfek8"]
+
+[ext_resource type="Script" uid="uid://n0cq4x1yibg5" path="res://Scrips/startscreen.gd" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://cj1x2lai38f3n" path="res://Sprites/startpage1.png" id="2_60ddj"]
+[ext_resource type="AudioStream" uid="uid://3ll0sk2h3a6y" path="res://Sounds/music_for_videos-western-duel-165284.mp3" id="3_60ddj"]
+
+[node name="StartScreen" type="Control" unique_id=1013982055]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ainjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=705681006]
+position = Vector2(577, 325)
+texture = ExtResource("2_60ddj")
+
+[node name="Button" type="TextureButton" parent="." unique_id=1832229061]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 404.0
+offset_right = 934.0
+offset_bottom = 495.0
+script = ExtResource("1_ainjc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=766734376]
+stream = ExtResource("3_60ddj")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

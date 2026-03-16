@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://bihl2pjb0sldd"]
 
 [ext_resource type="PackedScene" uid="uid://yxyu1ql7hoid" path="res://Scenes/player.tscn" id="1_l756w"]
+[ext_resource type="AudioStream" uid="uid://c3y53rr3s33rq" path="res://Sounds/roybushband-gangster-western-149171.mp3" id="2_mgc0q"]
 [ext_resource type="PackedScene" uid="uid://obcqjfuugtyv" path="res://Scenes/spawner.tscn" id="3_0e3vx"]
-[ext_resource type="Texture2D" uid="uid://dmxvm18j8qjom" path="res://Saloon.png" id="3_6j5ir"]
-[ext_resource type="PackedScene" uid="uid://m1kdxx5pppty" path="res://Scenes/spawner_barrels.tscn" id="3_mgc0q"]
+[ext_resource type="Texture2D" uid="uid://dmxvm18j8qjom" path="res://Sprites/Saloon.png" id="3_6j5ir"]
+[ext_resource type="PackedScene" path="res://Scenes/spawner_barrels.tscn" id="3_mgc0q"]
 
 [node name="Node2D" type="Node" unique_id=1190247988]
 
@@ -12,6 +13,11 @@ position = Vector2(390, 294)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2133743916]
 position = Vector2(640, 360)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D" unique_id=918498873]
+stream = ExtResource("2_mgc0q")
+autoplay = true
+parameters/looping = false
 
 [node name="Spawner" parent="." unique_id=58363158 instance=ExtResource("3_0e3vx")]
 max_entities = 15

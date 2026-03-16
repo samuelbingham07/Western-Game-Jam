@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Western Bullet Hell"
-run/main_scene="uid://bihl2pjb0sldd"
+run/main_scene="uid://dgg8vq7dnfek8"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
