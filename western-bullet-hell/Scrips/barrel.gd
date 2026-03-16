@@ -7,6 +7,7 @@ extends Node2D
 var bad_things: Array[Callable] = [ speed_down, 
 max_bullet_down,
 speed_up,
+do_damage,
 ]
 
 
@@ -28,6 +29,12 @@ func max_bullet_down():
 	
 func speed_up():
 	Global.player_speed = 600
+	
+func do_damage():
+	if Global.p_health > 5:
+		Global.p_health - 3
+	else:
+		Global.p_health + 1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	animated_sprite_2d.play("opening")

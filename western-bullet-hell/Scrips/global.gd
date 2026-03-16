@@ -3,6 +3,7 @@ extends Node
 var coins := 0
 var player_speed := 300
 var max_bullets = 6
+var p_health := 10
 
 func _process(delta: float) -> void:
 	if player_speed != 300:

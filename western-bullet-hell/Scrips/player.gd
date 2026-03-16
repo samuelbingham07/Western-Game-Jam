@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var p_health := 10
 var screen_size
 
 @onready var c_label = $Coins
@@ -85,14 +84,14 @@ func coin_label():
 	c_label.text = "Coins: " + str(Global.coins)
 	
 func health_label():
-	h_label.text = "Health: " + str(p_health)
+	h_label.text = "Health: " + str(Global.p_health)
 
 
 func damage_dealt(amount):
-	p_health -= amount
+	Global.p_health -= amount
 	animated_sprite_2d.modulate = Color.RED
 	modulator.start()
-	if p_health <= 0:
+	if Global.p_health <= 0:
 		health_zero.emit()
 	
 
@@ -107,6 +106,7 @@ func _on_health_zero():
 
 func _on_restart_timer_timeout() -> void:
 	Global.coins = 0
+	Global.p_health = 10
 	get_tree().reload_current_scene()
 
 func _on_modulator_timeout() -> void:

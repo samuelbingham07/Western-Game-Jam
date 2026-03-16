@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://m1kdxx5pppty"]
+
+[ext_resource type="Script" uid="uid://bwyhcmcpi6y1h" path="res://Scrips/spawner_barrels.gd" id="1_smyvr"]
+
+[node name="Spawner_barrels" type="Node2D" unique_id=58363158]
+script = ExtResource("1_smyvr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1420285800]
+wait_time = 3.0829999999999997
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

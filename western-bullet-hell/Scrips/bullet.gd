@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func check_bounds():
 	if position.x < 0 or position.x > (screen_size.x):
 		queue_free()
-	if position.y < 75 or position.y > (screen_size.y - 90sss):
+	if position.y < 75 or position.y > (screen_size.y - 90):
 		queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
