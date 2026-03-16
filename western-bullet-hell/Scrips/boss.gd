@@ -50,8 +50,12 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	sprite_2d.modulate = Color.RED
 	color_change.start()
-	print("boss hit, health remaining: ", health)
 	if health <= 0:
+		print("boss died")  # ✅ Add this
+		var player = get_tree().get_first_node_in_group("player")
+		print("player found: ", player)  # ✅ And this
+		if player:
+			player.show_win_screen()
 		queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

@@ -10,7 +10,7 @@ var screen_size
 @onready var modulator: Timer = $Modulator
 @onready var death_screen = $CanvasLayer
 @onready var death_label = $CanvasLayer/Label
-@onready var sub_label = $CanvasLayer/Label2  # ✅ Added
+@onready var sub_label = $CanvasLayer/Label2 
 @onready var retry_button = $CanvasLayer/Button
 
 const ACCEL := 10.0
@@ -18,6 +18,7 @@ const WRAPPING := 40
 signal health_zero
 
 func _ready() -> void:
+	add_to_group("player")
 	screen_size = get_viewport_rect().size
 	health_zero.connect(_on_health_zero)
 	animated_sprite_2d.play("walk_down")
@@ -76,18 +77,19 @@ func _on_health_zero():
 	character.visible = false
 	area.queue_free()
 	death_label.text = "You Died!"
-	sub_label.text = "Better luck next time..."  # ✅ Death message
+	sub_label.text = "Better luck next time..."  
 	retry_button.text = "Retry"
 	death_screen.visible = true
 
 func show_win_screen():
 	character.visible = false
 	death_label.text = "You Win! 🎉"
-	sub_label.text = "Congratulations!"  # ✅ Win message
+	sub_label.text = "Congratulations!" 
 	retry_button.text = "Play Again"
 	death_screen.visible = true
 
 func _on_button_pressed() -> void:
+	get_tree().call_group("bullets", "queue_free")
 	Global.coins = 0
 	Global.p_health = 10
 	get_tree().reload_current_scene()

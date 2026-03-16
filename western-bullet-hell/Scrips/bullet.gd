@@ -4,6 +4,7 @@ var speed_multiplier := 1.0
 var screen_size
 
 func _ready() -> void:
+	add_to_group("bullets")
 	screen_size = get_viewport_rect().size
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)
 	await get_tree().create_timer(0.3).timeout

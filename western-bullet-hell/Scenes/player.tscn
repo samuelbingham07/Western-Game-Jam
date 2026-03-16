@@ -206,9 +206,10 @@ position = Vector2(14, 18)
 layer = 10
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=934630138]
+anchors_preset = -1
 offset_left = 526.0
 offset_top = 324.0
-offset_right = 662.0
+offset_right = 679.0
 offset_bottom = 363.0
 theme_override_fonts/font = ExtResource("4_fkybt")
 theme_override_font_sizes/font_size = 32
@@ -218,19 +219,31 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=143233635]
-offset_left = 526.0
-offset_top = 360.0
-offset_right = 596.0
-offset_bottom = 383.0
+anchors_preset = -1
+anchor_right = 0.06944445
+offset_left = 528.0
+offset_top = 364.0
+offset_right = 598.0
+offset_bottom = 387.0
+theme_override_fonts/font = ExtResource("4_fkybt")
 text = "You alive"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1948613685]
 top_level = true
-offset_left = 526.0
-offset_top = 390.0
-offset_right = 678.0
-offset_bottom = 457.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = 64.0
+offset_right = 105.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_fkybt")
 theme_override_font_sizes/font_size = 48
 text = "Retry"
