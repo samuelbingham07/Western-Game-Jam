@@ -1,5 +1,6 @@
 extends Node
 
+
 var coins := 0
 var player_speed := 300
 var max_bullets = 6
