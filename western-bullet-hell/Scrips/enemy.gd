@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var stop_distance := 300
 @export var shoot_cooldown := 1.5
 
+
 var player: Node2D = null
 var shoot_timer := 0.0
 var bullet_scene = preload("res://Scenes/enemy_bullet.tscn")

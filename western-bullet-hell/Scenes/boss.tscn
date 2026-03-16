@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dkk4hd3rr2scb"]
+[gd_scene format=3 uid="uid://cy5uiucocnkqb"]
 
 [ext_resource type="Script" uid="uid://bqryswh8cl5xo" path="res://Scrips/boss.gd" id="1_wwfse"]
 [ext_resource type="Texture2D" uid="uid://dnx3ikfnhdhut" path="res://Sprites/boss.png" id="2_cxrok"]
@@ -25,3 +25,7 @@ collision_mask = 2
 position = Vector2(-1.1219699e-07, 0.94117653)
 scale = Vector2(0.4705883, 0.4705883)
 shape = SubResource("CapsuleShape2D_wwfse")
+
+[node name="color_change" type="Timer" parent="." unique_id=1527464208]
+
+[connection signal="timeout" from="color_change" to="." method="_on_color_change_timeout"]

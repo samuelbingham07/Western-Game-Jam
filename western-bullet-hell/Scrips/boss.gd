@@ -5,6 +5,9 @@ extends CharacterBody2D
 @export var shoot_cooldown := 1.0
 @export var max_health := 10
 
+@onready var color_change: Timer = $color_change
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 var player: Node2D = null
 var shoot_timer := 0.0
 var health := 10
@@ -45,6 +48,8 @@ func shoot() -> void:
 
 func take_damage(amount: int) -> void:
 	health -= amount
+	sprite_2d.modulate = Color.RED
+	color_change.start()
 	print("boss hit, health remaining: ", health)
 	if health <= 0:
 		queue_free()
@@ -52,3 +57,7 @@ func take_damage(amount: int) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("boss area entered by: ", area.get_parent())
 	take_damage(1)
+
+
+func _on_color_change_timeout() -> void:
+	sprite_2d.modulate = Color(1, 1, 1, 1)

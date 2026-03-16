@@ -4,7 +4,7 @@ extends Node
 var coins := 0
 var player_speed := 300
 var max_bullets = 6
-var p_health := 10
+var p_health := 15
 
 func _process(delta: float) -> void:
 	if player_speed != 300:
@@ -14,3 +14,7 @@ func _process(delta: float) -> void:
 	if max_bullets < 6:
 		await get_tree().create_timer(20.0).timeout
 		max_bullets = 6
+		
+	if coins > 10:
+		coins -= 10
+		p_health += 5
